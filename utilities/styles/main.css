@@ -121,8 +121,13 @@ section[data-testid="hobby-container"] li {
 @media (max-width: 768px) {
     body {
         flex-direction: column;
-        height: auto;
-        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    h3 {
+        font-weight: 300;
     }
 
     section[data-testid="bio-section"] {
@@ -138,7 +143,7 @@ section[data-testid="hobby-container"] li {
     }
 
     .card {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     section[data-testid="hobby-container"] {
@@ -147,5 +152,22 @@ section[data-testid="hobby-container"] li {
     }
     ul[data-testid="test-user-hobbies"], ul[data-testid="test-user-dislikes"] {
         gap: 5px;
+        margin: 8px;
+        padding-left: 0;
+    }
+
+    section[data-testid="hobby-container"] div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section[data-testid="hobby-container"] p {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    section[data-testid="hobby-container"] li {
+        display:inline-block;
+        padding:4px 6px;
     }
 }

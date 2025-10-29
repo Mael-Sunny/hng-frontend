@@ -107,9 +107,7 @@ Responsive adjustments */
     .about-text {
         text-align: center;
     }
-}
 
-@media (max-width: 768px) {
     main[data-testid="test-about-page"] {
         padding: 20px;
     }
@@ -117,6 +115,7 @@ Responsive adjustments */
     section p {
         font-size: 0.95rem;
     }
+
 }
 
 @media (max-width: 480px) {
