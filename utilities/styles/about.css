@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #000000;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+
+/* ===== ABOUT PAGE ===== */
+.about-container {
+  background-color: #17153B;
+  color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-width: 600px;
+  line-height: 1.6;
+  transition: opacity 1s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  color: #C8ACD6;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #C8ACD6;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* Optional: light theme styles */
+.light-theme .about-container {
+  background: #fff;
+  color: #17153B;
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #C8ACD6;
+  color: #17153B;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  background: #a88dc1;
+  transform: scale(1.05);
+}
+
+/* ===== LIGHT THEME ===== */
+.light-theme {
+  background: #f5f5f5;
+  color: #17153B;
+}
+
+.light-theme .about-container {
+  background-color: #fff;
+  color: #17153B;
+}
+
+.light-theme .skills,
+.light-theme .goals {
+  background-color: #e5e5ff;
+}
+
+.light-theme a {
+  color: #2563eb;
+}
+
+
+
+/* 
+Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        height: 100%;
+    }
+    .about-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    main[data-testid="test-about-page"] {
+        padding: 20px;
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main[data-testid="test-about-page"] {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.1rem;
+    }
+
+    section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}

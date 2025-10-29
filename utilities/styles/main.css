@@ -1,0 +1,151 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      height: calc(100vh - 70px);
+    }
+
+ /*--------THE BASE CARD AND ITS BORDER ANIMATION STYLE --------*/
+.card {
+    /* padding: 2em; */
+    width: 90%;
+    max-width: 800px;
+    background-color: #17153B;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after, .card::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(255, 0, 0), rgb(0, 255, 0), blue, rgb(255, 166, 0), rgb(252, 1, 252), red) ;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 10px;
+    animation: 5s spin linear infinite;
+}
+.card::before {
+    filter: blur( 1.5rem );
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+ /* ------THE BASE CARD AND ANIMATION STYLING ENDS HERE------- */
+
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+section[data-testid="bio-section"] {
+    display: flex;
+    padding: 2em;
+}
+
+nav[data-testid="test-user-social-links"] ul {
+    display:flex;
+    gap:8px;
+    padding:0;
+    margin:0;
+    list-style:none;
+    flex-wrap:wrap
+}
+nav[data-testid="test-user-social-links"] a {
+    display:inline-block;
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid #c8acd633;
+    text-decoration:none;
+    font-weight:600
+}
+
+
+/*---HOBBIES AND DISLIKES SECTION*/
+section[data-testid="hobby-container"] {
+    box-sizing: border-box;
+    border-radius: 0px 100px 10px 10px;
+    margin-top: 10px;
+    padding: 2em;
+    width: 100%;
+    background-color: #0d0b2c;
+}
+
+section[data-testid="hobby-container"] div {
+    display: flex;
+    align-items: center;
+}
+
+ul[data-testid="test-user-hobbies"], ul[data-testid="test-user-dislikes"] {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+section[data-testid="hobby-container"] li {
+    display:inline-block;
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid #c8acd633;
+    text-decoration:none;
+}
+
+
+/*------ RESPONSIVE SCREEN -------*/
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    section[data-testid="bio-section"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em;
+        text-align: center;
+    }
+
+    nav[data-testid="test-user-social-links"] ul {
+        justify-content: center;
+    }
+
+    .card {
+        margin-top: 50px;
+    }
+
+    section[data-testid="hobby-container"] {
+        box-sizing: border-box;
+        border-radius: 0px 0px 10px 10px;
+    }
+    ul[data-testid="test-user-hobbies"], ul[data-testid="test-user-dislikes"] {
+        gap: 5px;
+    }
+}

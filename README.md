@@ -13,3 +13,8 @@ What is included:
 - All required data-testid attributes for automated tests
 - Current time in milliseconds updates every 250ms (so it's always close to Date.now())
 - Responsive layout (mobile stacked / desktop side-by-side) -->
+
+
+
+<!-- Update
+An about and contact me page has been added to the project -->
